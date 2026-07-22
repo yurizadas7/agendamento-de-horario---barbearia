@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <title>Painel | Ember Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="hotfix.css?v=1">
+</head>
+<body>
+  <section class="login-view" id="login-view" hidden>
+    <form class="login-card" id="login-form">
+      <div class="brand-mark">E</div>
+      <p class="eyebrow">Ember Studio</p>
+      <h1>Acesso administrativo</h1>
+      <p>Entre para acompanhar a agenda, confirmar reservas e bloquear horários.</p>
+      <label for="password">Senha do painel</label>
+      <input id="password" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit">Entrar no painel <span>→</span></button>
+      <p class="message" id="login-message" role="alert"></p>
+      <a href="/">← Voltar ao site</a>
+    </form>
+  </section>
+
+  <div class="admin-app" id="admin-app">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><span>E</span><div><strong>EMBER</strong><small>STUDIO · ADMIN</small></div></div>
+      <nav><button class="active" type="button">Agenda</button><a href="/" target="_blank">Abrir site ↗</a></nav>
+    </aside>
+
+    <main>
+      <header class="topbar"><div><p class="eyebrow">Painel administrativo</p><h1>Agenda do Studio</h1></div><button id="refresh" type="button">Atualizar</button></header>
+      <section class="stats" aria-label="Resumo da agenda">
+        <article><span>Hoje</span><strong id="stat-today">0</strong><small>agendamentos</small></article>
+        <article><span>Pendentes</span><strong id="stat-pending">0</strong><small>aguardando confirmação</small></article>
+        <article><span>Confirmados</span><strong id="stat-confirmed">0</strong><small>próximos atendimentos</small></article>
+        <article><span>Concluído</span><strong id="stat-revenue">R$ 0</strong><small>serviços finalizados</small></article>
+      </section>
+
+      <section class="panel bookings-panel">
+        <div class="panel-head"><div><p class="eyebrow">Reservas</p><h2>Agenda</h2></div><div class="filters"><input id="filter-date" type="date" aria-label="Filtrar por data"><select id="filter-status" aria-label="Filtrar por status"><option value="">Todos os status</option><option value="pending">Pendentes</option><option value="confirmed">Confirmados</option><option value="completed">Concluídos</option><option value="cancelled">Cancelados</option></select></div></div>
+        <div class="booking-list" id="booking-list"></div>
+        <p class="empty" id="booking-empty" hidden>Nenhuma reserva encontrada.</p>
+      </section>
+
+      <section class="admin-grid">
+        <form class="panel block-form" id="block-form">
+          <div class="panel-head"><div><p class="eyebrow">Indisponibilidade</p><h2>Bloquear horário</h2></div></div>
+          <label for="block-barber">Barbeiro</label><select id="block-barber" required></select>
+          <div class="field-row"><div><label for="block-date">Data</label><input id="block-date" type="date" required></div><div><label for="block-start">Início</label><input id="block-start" type="time" required></div><div><label for="block-end">Fim</label><input id="block-end" type="time" required></div></div>
+          <label for="block-reason">Motivo</label><input id="block-reason" type="text" maxlength="120" placeholder="Folga, almoço, compromisso...">
+          <button type="submit">Bloquear período</button><p class="message" id="block-message" role="alert"></p>
+        </form>
+        <section class="panel"><div class="panel-head"><div><p class="eyebrow">Próximos bloqueios</p><h2>Indisponibilidades</h2></div></div><div class="block-list" id="block-list"></div><p class="empty" id="block-empty" hidden>Nenhum bloqueio futuro.</p></section>
+      </section>
+    </main>
+  </div>
+  <script src="app.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+{
+  "services": [
+    {
+      "id": "corte-social",
+      "name": "Corte Social",
+      "duration": 45,
+      "price": 45,
+      "category": "cortes",
+      "active": true
+    },
+    {
+      "id": "degrade-fade",
+      "name": "Degradê / Fade",
+      "duration": 50,
+      "price": 50,
+      "category": "cortes",
+      "active": true
+    },
+    {
+      "id": "corte-tesoura",
+      "name": "Corte na Tesoura",
+      "duration": 55,
+      "price": 55,
+      "category": "cortes",
+      "active": true
+    },
+    {
+      "id": "corte-infantil",
+      "name": "Corte Infantil",
+      "duration": 40,
+      "price": 40,
+      "category": "cortes",
+      "active": true
+    },
+    {
+      "id": "experiencia-completa",
+      "name": "Experiência Completa",
+      "duration": 80,
+      "price": 75,
+      "category": "combo",
+      "active": true
+    },
+    {
+      "id": "barba-premium",
+      "name": "Barba Premium",
+      "duration": 35,
+      "price": 35,
+      "category": "barba",
+      "active": true
+    },
+    {
+      "id": "pezinho-contornos",
+      "name": "Pezinho e Contornos",
+      "duration": 20,
+      "price": 20,
+      "category": "cortes",
+      "active": true
+    },
+    {
+      "id": "sobrancelha",
+      "name": "Sobrancelha",
+      "duration": 15,
+      "price": 15,
+      "category": "cuidados",
+      "active": true
+    },
+    {
+      "id": "hidratacao-capilar",
+      "name": "Hidratação Capilar",
+      "duration": 30,
+      "price": 30,
+      "category": "cuidados",
+      "active": true
+    },
+    {
+      "id": "camuflagem-grisalhos",
+      "name": "Camuflagem de Grisalhos",
+      "duration": 45,
+      "price": 45,
+      "category": "cuidados",
+      "active": true
+    },
+    {
+      "id": "luzes-platinado",
+      "name": "Luzes ou Platinado",
+      "duration": 120,
+      "price": null,
+      "category": "cuidados",
+      "active": true
+    },
+    {
+      "id": "alinhamento-capilar",
+      "name": "Alinhamento Capilar",
+      "duration": 90,
+      "price": null,
+      "category": "cuidados",
+      "active": true
+    }
+  ],
+  "barbers": [
+    {
+      "id": "rafael-costa",
+      "name": "Rafael Costa",
+      "specialty": "Degradê e cortes modernos",
+      "workDays": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "start": "09:00",
+      "end": "19:00",
+      "active": true
+    },
+    {
+      "id": "lucas-almeida",
+      "name": "Lucas Almeida",
+      "specialty": "Barba e cortes clássicos",
+      "workDays": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "start": "09:00",
+      "end": "19:00",
+      "active": true
+    }
+  ],
+  "bookings": [
+    {
+      "id": "52c12a10-2db0-4a1f-a82a-225a71f08c17",
+      "code": "649087",
+      "clientName": "Teste Automatizado",
+      "phone": "11999999999",
+      "serviceId": "corte-social",
+      "serviceName": "Corte Social",
+      "duration": 45,
+      "price": 45,
+      "barberId": "rafael-costa",
+      "barberName": "Rafael Costa",
+      "date": "2026-07-23",
+      "time": "09:00",
+      "notes": "Teste de reserva",
+      "status": "pending",
+      "createdAt": "2026-07-22T19:06:48.582Z"
+    }
+  ],
+  "blocks": []
+}

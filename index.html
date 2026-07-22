@@ -1,164 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Barbearia Premium</title>
-
-    <meta name="description"
-        content="Barbearia especializada em cortes masculinos, barba e cuidados pessoais. Agende seu horário pelo WhatsApp.">
-
-    <link rel="stylesheet" href="CSS/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Ember Studio — barbearia, estilo e atendimento com horário marcado.">
+  <title>Ember Studio | Barbearia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css?v=5">
 </head>
-
 <body>
+  <canvas id="waterCanvas" aria-hidden="true"></canvas>
+  <div class="water-vignette" aria-hidden="true"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#Inicio">Início</a></li>
-                <li><a href="#Servicos">Serviços</a></li>
-                <li><a href="#Galeria">Galeria</a></li>
-                <li><a href="#Agendamento">Agendamento</a></li>
-                <li><a href="#Contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="app-header">
+    <button class="brand tab-trigger" type="button" data-tab="inicio" aria-label="Ember Studio — início">
+      <canvas class="bear-icon" width="450" height="600" aria-hidden="true"></canvas>
+      <span><strong>EMBER</strong><small>STUDIO</small></span>
+    </button>
+    <nav class="tabs" aria-label="Navegação principal" role="tablist">
+      <button class="tab-trigger active" role="tab" aria-selected="true" data-tab="inicio">Início</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="barbeiros">Barbeiros</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="servicos">Serviços</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="planos">Planos</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="trabalhos">Trabalhos</button>
+      <button class="tab-trigger" role="tab" aria-selected="false" data-tab="studio">O Studio</button>
+    </nav>
+    <button class="gold-button open-barbers" type="button">Agendar <span>↗</span></button>
+  </header>
 
-    <main>
+  <main class="shell">
+    <section class="tab-panel active" id="inicio" role="tabpanel">
+      <div class="hero-card glass-card">
+        <div class="hero-copy">
+          <p class="eyebrow"><i></i> Sistema de agendamento premium</p>
+          <h1>Agendamento que<br><span>vende mais.</span></h1>
+          <p class="lead">Landing page premium, reserva direta pelo WhatsApp e painel administrativo em uma solução pensada para barbearias que querem organizar horários, aumentar confiança e converter mais clientes.</p>
+          <div class="hero-actions">
+            <button class="gold-button open-barbers" type="button">Agendar experiência <span>→</span></button>
+            <button class="ghost-button tab-trigger" type="button" data-tab="servicos">Explorar serviços</button>
+          </div>
+          <div class="quick-info">
+            <div><small>Atendimento</small><strong>Ter — Sáb</strong></div>
+            <div><small>Experiência</small><strong>4,9 ★</strong></div>
+            <div><small>Clientes</small><strong>500+</strong></div>
+          </div>
+        </div>
+        <div class="bear-stage" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <canvas class="bear-mascot" width="450" height="600" aria-hidden="true"></canvas>
+          <span>EMBER STUDIO</span>
+        </div>
+      </div>
+      <div class="feature-row">
+        <article class="glass-card"><span>01</span><strong>Experiência premium</strong><p>Visual elegante com foco em apresentação e identidade da marca.</p></article>
+        <article class="glass-card"><span>02</span><strong>Agenda organizada</strong><p>Reservas e horários em um fluxo simples, rápido e profissional.</p></article>
+        <article class="glass-card"><span>03</span><strong>Atendimento direto</strong><p>Confirmação por WhatsApp com comunicação clara e prática.</p></article>
+      </div>
+    </section>
 
-        <!-- HOME -->
-        <section id="Inicio">
-             <img src="CORTES/arte.png" alt="Logo da Barbearia Premium" class="logo">
+    <section class="tab-panel" id="planos" role="tabpanel">
+      <div class="section-head compact">
+        <p class="eyebrow">Planos comerciais</p>
+        <h2>Escolha o nível ideal para operar com clareza.</h2>
+        <p>Uma estrutura simples, profissional e pronta para apresentar ao cliente com foco em valor e confiança.</p>
+      </div>
+      <div class="plans-grid">
+        <article class="plan-card glass-card">
+          <div class="plan-top">
+            <span>Entrada</span>
+            <h3>Essencial</h3>
+          </div>
+          <strong class="price">R$ 99,90<span>/mês</span></strong>
+          <p>Para negócios que querem começar com organização, apresentação e atendimento mais profissional.</p>
+          <ul>
+            <li>Até 2 usuários</li>
+            <li>Até 100 clientes</li>
+            <li>Agenda e reservas</li>
+            <li>WhatsApp integrado</li>
+          </ul>
+          <small>Suporte básico</small>
+        </article>
 
-            <h1>Estilo, precisão e confiança em cada atendimento.</h1>
+        <article class="plan-card featured glass-card">
+          <div class="plan-badge">Mais indicado</div>
+          <div class="plan-top">
+            <span>Equipe comercial</span>
+            <h3>Profissional</h3>
+          </div>
+          <strong class="price">R$ 199,90<span>/mês</span></strong>
+          <p>Para operações que precisam de mais controle, equipe e acompanhamento comercial com mais consistência.</p>
+          <ul>
+            <li>Até 10 usuários</li>
+            <li>Até 2 mil clientes</li>
+            <li>Gestão de agenda</li>
+            <li>Resumo e organização</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <small>Suporte + manutenção</small>
+        </article>
 
-            <h2>
-                Cortes modernos, barba impecável e atendimento de excelência.
-            </h2>
+        <article class="plan-card glass-card">
+          <div class="plan-top">
+            <span>Expansão</span>
+            <h3>Premium</h3>
+          </div>
+          <strong class="price">A partir de R$ 250<span>/mês</span></strong>
+          <p>Para negócios que precisam de personalização, evolução contínua e atendimento com estrutura completa.</p>
+          <ul>
+            <li>Usuários ilimitados</li>
+            <li>Clientes ilimitados</li>
+            <li>Personalização</li>
+            <li>Treinamento</li>
+            <li>Evoluções futuras</li>
+          </ul>
+          <small>Suporte + manutenção + evolução</small>
+        </article>
+      </div>
+    </section>
 
-            <p>
-                Transforme seu visual com profissionais qualificados e um
-                ambiente pensado para o seu conforto.
-            </p>
+    <section class="tab-panel" id="barbeiros" role="tabpanel">
+      <header class="section-head"><p class="eyebrow">Nosso time</p><h2>Escolha quem vai<br><span>cuidar do seu estilo.</span></h2><p>Cada profissional tem uma assinatura. Abra o perfil, conheça o trabalho e agende direto.</p></header>
+      <div class="barber-grid">
+        <article class="barber-card glass-card" data-barber="Rafael Costa" data-role="Especialista em degradê" data-bio="Barbeiro há 8 anos, Rafael trabalha cortes modernos, degradês precisos e acabamento detalhado. Ideal para quem busca presença e linhas marcantes." data-photo="CORTES/img1.jpg">
+          <div class="barber-photo"><img src="CORTES/img1.jpg" alt="Trabalho do barbeiro Rafael Costa"><span>Disponível</span></div>
+          <div class="barber-info"><small>BARBEIRO 01</small><h3>Rafael Costa</h3><p>Degradê · Corte moderno · Acabamento</p><button class="profile-button" type="button">Conhecer e agendar <span>→</span></button></div>
+        </article>
+        <article class="barber-card glass-card" data-barber="Lucas Almeida" data-role="Especialista em barba" data-bio="Lucas une técnicas clássicas e desenho contemporâneo. É especialista em barba, toalha quente e cortes sociais com acabamento natural." data-photo="CORTES/img2.jpg">
+          <div class="barber-photo"><img src="CORTES/img2.jpg" alt="Trabalho do barbeiro Lucas Almeida"><span>Disponível</span></div>
+          <div class="barber-info"><small>BARBEIRO 02</small><h3>Lucas Almeida</h3><p>Barba · Corte clássico · Toalha quente</p><button class="profile-button" type="button">Conhecer e agendar <span>→</span></button></div>
+        </article>
+        <article class="barber-card glass-card" data-barber="Primeiro disponível" data-role="Atendimento mais rápido" data-bio="Quer praticidade? Escolha o primeiro profissional disponível e a equipe Ember encaixa você no melhor horário possível." data-photo="CORTES/img4.jpg">
+          <div class="barber-photo"><img src="CORTES/img4.jpg" alt="Atendimento no Ember Studio"><span>Encaixe rápido</span></div>
+          <div class="barber-info"><small>SEM PREFERÊNCIA</small><h3>Primeiro disponível</h3><p>Agilidade · Flexibilidade · Mesmo padrão Ember</p><button class="profile-button" type="button">Ver opção e agendar <span>→</span></button></div>
+        </article>
+      </div>
+    </section>
 
-            <a href="#Agendamento" class="btn-agendar">
-                Agendar pelo WhatsApp
-            </a>
+    <section class="tab-panel" id="servicos" role="tabpanel">
+      <header class="section-head"><p class="eyebrow">Menu da barbearia</p><h2>Do corte ao<br><span>cuidado completo.</span></h2><p>Encontre o serviço ideal para seu estilo, tipo de cabelo e rotina. Tratamentos químicos dependem de avaliação prévia do profissional.</p></header>
+      <div class="service-filters" aria-label="Filtrar serviços">
+        <button class="active" type="button" data-service-filter="todos">Todos</button>
+        <button type="button" data-service-filter="cortes">Cortes</button>
+        <button type="button" data-service-filter="barba">Barba</button>
+        <button type="button" data-service-filter="cuidados">Cuidados capilares</button>
+      </div>
+      <div class="service-grid">
+        <article class="service-card glass-card" data-category="cortes"><span>01</span><div><small>CORTE · 45 MIN</small><h3>Corte Social</h3><p>Laterais alinhadas, topo modelado e finalização para o dia a dia.</p></div><strong>R$ 45</strong><button class="open-barbers" type="button" data-service="Corte Social">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cortes"><span>02</span><div><small>CORTE · 50 MIN</small><h3>Degradê / Fade</h3><p>Transição precisa nas laterais com acabamento personalizado.</p></div><strong>R$ 50</strong><button class="open-barbers" type="button" data-service="Degradê / Fade">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cortes"><span>03</span><div><small>CORTE · 55 MIN</small><h3>Corte na Tesoura</h3><p>Construção de forma, movimento e volume sem uso de máquina no topo.</p></div><strong>R$ 55</strong><button class="open-barbers" type="button" data-service="Corte na Tesoura">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cortes"><span>04</span><div><small>CORTE · 40 MIN</small><h3>Corte Infantil</h3><p>Atendimento cuidadoso para crianças, com conforto e paciência.</p></div><strong>R$ 40</strong><button class="open-barbers" type="button" data-service="Corte Infantil">Agendar →</button></article>
+        <article class="service-card glass-card featured" data-category="cortes barba"><em>Mais escolhido</em><span>05</span><div><small>COMBO · 80 MIN</small><h3>Experiência Completa</h3><p>Corte, barba, toalha quente, acabamento e finalização.</p></div><strong>R$ 75</strong><button class="open-barbers" type="button" data-service="Experiência Completa">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="barba"><span>06</span><div><small>BARBA · 35 MIN</small><h3>Barba Premium</h3><p>Desenho, toalha quente, navalha e hidratação dos fios.</p></div><strong>R$ 35</strong><button class="open-barbers" type="button" data-service="Barba Premium">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cortes"><span>07</span><div><small>ACABAMENTO · 20 MIN</small><h3>Pezinho e Contornos</h3><p>Manutenção rápida das linhas entre um corte e outro.</p></div><strong>R$ 20</strong><button class="open-barbers" type="button" data-service="Pezinho e Contornos">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cuidados"><span>08</span><div><small>DETALHE · 15 MIN</small><h3>Sobrancelha</h3><p>Limpeza e alinhamento para equilibrar o visual.</p></div><strong>R$ 15</strong><button class="open-barbers" type="button" data-service="Sobrancelha">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cuidados"><span>09</span><div><small>CUIDADO · 30 MIN</small><h3>Hidratação Capilar</h3><p>Reposição de maciez e brilho para cabelos ressecados ou opacos.</p></div><strong>R$ 30</strong><button class="open-barbers" type="button" data-service="Hidratação Capilar">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cuidados"><span>10</span><div><small>COR · 45 MIN</small><h3>Camuflagem de Grisalhos</h3><p>Suavização discreta dos fios brancos com resultado natural.</p></div><strong>R$ 45</strong><button class="open-barbers" type="button" data-service="Camuflagem de Grisalhos">Agendar →</button></article>
+        <article class="service-card glass-card" data-category="cuidados"><span>11</span><div><small>QUÍMICA · SOB AVALIAÇÃO</small><h3>Luzes ou Platinado</h3><p>Clareamento personalizado conforme a condição e o comprimento dos fios.</p></div><strong>A consultar</strong><button class="open-barbers" type="button" data-service="Luzes ou Platinado">Avaliar →</button></article>
+        <article class="service-card glass-card" data-category="cuidados"><span>12</span><div><small>FORMA · SOB AVALIAÇÃO</small><h3>Alinhamento Capilar</h3><p>Redução de volume e controle dos fios após avaliação profissional.</p></div><strong>A consultar</strong><button class="open-barbers" type="button" data-service="Alinhamento Capilar">Avaliar →</button></article>
+      </div>
+    </section>
 
-           
-        </section>
+    <section class="tab-panel" id="trabalhos" role="tabpanel">
+      <header class="section-head"><p class="eyebrow">Portfólio Ember</p><h2>Trabalho que<br><span>fala por si.</span></h2><p>Referências de estilos e acabamentos realizados pela equipe. Escolha o resultado que combina com você e mostre ao barbeiro no atendimento.</p></header>
+      <div class="portfolio-grid">
+        <figure class="portfolio-main glass-card"><img src="CORTES/img1.jpg" alt="Corte moderno com degradê"><figcaption><small>DEGRADÊ</small><strong>Precisão em cada linha</strong></figcaption></figure>
+        <figure class="glass-card"><img src="CORTES/img2.jpg" alt="Barba modelada"><figcaption><small>BARBA</small><strong>Desenho e presença</strong></figcaption></figure>
+        <figure class="glass-card"><img src="CORTES/img3.jpg" alt="Acabamento masculino"><figcaption><small>ACABAMENTO</small><strong>Detalhes que elevam</strong></figcaption></figure>
+        <figure class="portfolio-wide glass-card"><img src="CORTES/img4.jpg" alt="Corte masculino contemporâneo"><figcaption><small>ESTILO</small><strong>Identidade sob medida</strong></figcaption></figure>
+      </div>
+      <div class="review-grid">
+        <blockquote class="glass-card"><span>★★★★★</span><p>“Atendimento pontual, ambiente impecável e o corte ficou exatamente como eu queria.”</p><footer>Cliente Ember <small>Avaliação de demonstração</small></footer></blockquote>
+        <blockquote class="glass-card"><span>★★★★★</span><p>“A apresentação do barbeiro ajudou muito na escolha. Experiência premium do início ao fim.”</p><footer>Cliente Ember <small>Avaliação de demonstração</small></footer></blockquote>
+        <blockquote class="glass-card"><span>★★★★★</span><p>“Barba muito bem desenhada e atendimento sem pressa. Voltarei com certeza.”</p><footer>Cliente Ember <small>Avaliação de demonstração</small></footer></blockquote>
+      </div>
+    </section>
 
-            <h2 id="contador">0</h2>
+    <section class="tab-panel" id="studio" role="tabpanel">
+      <div class="studio-layout glass-card">
+        <div class="studio-visual"><img src="ft/hero.jpg" alt="Ambiente do Ember Studio"></div>
+        <div class="studio-copy"><p class="eyebrow">Ember Studio</p><h2>Onde técnica encontra identidade.</h2><p>Um espaço criado para transformar rotina em ritual. Atendimento próximo, profissionais selecionados e uma estética que traduz a assinatura Ember.</p><ul><li>Ambiente premium e confortável</li><li>Horário reservado para você</li><li>Produtos profissionais</li><li>Atendimento de terça a sábado</li></ul><div class="studio-details"><p><small>LOCALIZAÇÃO</small><strong>São Paulo · SP</strong><span>Endereço completo na confirmação</span></p><p><small>ATENDIMENTO</small><strong>Ter — Sáb · 09h às 19h</strong><span>Somente com horário marcado</span></p><p><small>CONTATO</small><strong>(11) 91596-9577</strong><span>Atendimento pelo WhatsApp</span></p><p><small>POLÍTICA</small><strong>Até 10 min de tolerância</strong><span>Reagende com antecedência</span></p></div><button class="gold-button open-barbers" type="button">Agendar experiência <span>→</span></button></div>
+      </div>
+    </section>
+  </main>
 
-            <p>Clientes satisfeitos</p>
+  <dialog class="barber-modal" id="barber-modal">
+    <button class="modal-close" type="button" aria-label="Fechar">×</button>
+    <div class="modal-photo"><img id="modal-photo" src="CORTES/img1.jpg" alt=""></div>
+    <div class="modal-content">
+      <p class="eyebrow">Conheça seu barbeiro</p><h2 id="modal-name">Rafael Costa</h2><strong id="modal-role">Especialista em degradê</strong><p id="modal-bio"></p>
+      <div class="modal-meta"><span><small>Experiência</small>Atendimento Ember</span><span><small>Horários</small>Ter — Sáb</span></div>
+      <div class="modal-works" id="modal-works"><img src="CORTES/img1.jpg" alt="Trabalho em destaque"><img src="CORTES/img2.jpg" alt="Trabalho em destaque"><img src="CORTES/img3.jpg" alt="Trabalho em destaque"></div>
+      <label for="modal-service">Serviço desejado</label>
+      <select id="modal-service"><option>Corte Social</option><option>Degradê / Fade</option><option>Corte na Tesoura</option><option>Corte Infantil</option><option>Experiência Completa</option><option>Barba Premium</option><option>Pezinho e Contornos</option><option>Sobrancelha</option><option>Hidratação Capilar</option><option>Camuflagem de Grisalhos</option><option>Luzes ou Platinado</option><option>Alinhamento Capilar</option></select>
+      <div class="modal-fields"><div><label for="client-name">Seu nome</label><input id="client-name" type="text" autocomplete="name" placeholder="Como podemos chamar você?"></div><div><label for="client-phone">Seu WhatsApp</label><input id="client-phone" type="tel" autocomplete="tel" placeholder="(11) 99999-9999"></div><div><label for="booking-date">Data desejada</label><input id="booking-date" type="date"></div><div><label for="booking-time">Horários disponíveis</label><select id="booking-time" disabled><option value="">Escolha primeiro a data</option></select></div><div class="modal-note-field"><label for="booking-note">Observação</label><input id="booking-note" type="text" placeholder="Opcional"></div></div>
+      <p class="modal-message" id="modal-message" role="alert"></p>
+      <button class="gold-button" id="whatsapp-link" type="button">Reservar e continuar no WhatsApp <span>↗</span></button>
+      <small class="safe-note">Ao continuar, o horário será reservado na agenda e a confirmação será enviada pelo WhatsApp.</small>
+    </div>
+  </dialog>
 
-        </section>
+  <button class="mobile-booking open-barbers" type="button">Agendar horário <span>↗</span></button>
 
-        <!-- SERVIÇOS -->
-        <section id="Servicos">
-
-            <h2>Serviços</h2>
-
-            <div class="cards-servicos">
-
-                <div class="card">
-                    <h3>✂️ Corte Masculino</h3>
-                    <p>Cortes modernos e clássicos.</p>
-                </div>
-
-                <div class="card">
-                    <h3>🧔 Barba</h3>
-                    <p>Acabamento e modelagem profissional.</p>
-                </div>
-
-                <div class="card">
-                    <h3>✨ Sobrancelha</h3>
-                    <p>Design para valorizar seu visual.</p>
-                </div>
-
-                <div class="card">
-                    <h3>💎 Tratamentos</h3>
-                    <p>Cuidados especiais para cabelo e barba.</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- GALERIA -->
-        <section id="Galeria">
-
-            <h2>Galeria</h2>
-
-            <p>Confira alguns dos nossos trabalhos recentes:</p>
-
-            <div class="galeria-imagens">
-
-                <img src="CORTES/img1.jpg"
-                    alt="Corte de cabelo masculino">
-
-                <img src="CORTES/img2.jpg"
-                    alt="Barba e bigode">
-
-                <img src="CORTES/img3.jpg"
-                    alt="Design de sobrancelhas">
-
-                <img src="CORTES/img4.jpg"
-                    alt="Tratamento capilar">
-
-            </div>
-
-        </section>
-
-        <!-- AGENDAMENTO -->
-        <section id="Agendamento">
-
-            <h2>Agendamento</h2>
-
-            <p>
-                Agende seu horário agora mesmo pelo WhatsApp e garanta seu atendimento.
-            </p>
-
-            <a href="https://wa.me/5511915969577?text=Olá!%20Gostaria%20de%20agendar%20um%20horário."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-agendar">
-
-                Falar no WhatsApp
-
-            </a>
-
-        </section>
-
-        <!-- CONTATO -->
-        <section id="Contato">
-
-            <h2>Contato</h2>
-
-            <p><strong>Telefone:</strong> (11) 99999-9999</p>
-
-            <p><strong>E-mail:</strong> contato@barbeariapremium.com</p>
-
-            <p><strong>Endereço:</strong> Rua Exemplo, 123 - São Paulo/SP</p>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <p>
-            &copy; 2026 Barbearia Premium.
-            Todos os direitos reservados.
-        </p>
-
-    </footer>
-
-    <script src="java/custom.js"></script>
-
+  <footer><span>© 2026 Ember Studio</span><span>Barbearia · estilo · cuidado masculino · <a href="/admin">Painel</a></span></footer>
+  <script src="java/custom.js?v=7"></script>
 </body>
-
 </html>
